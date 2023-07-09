@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "453525056736",
+    "project_id": "byerotten-bb949",
+    "storage_bucket": "byerotten-bb949.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453525056736:android:4490a3c899d200accf3485",
+        "android_client_info": {
+          "package_name": "com.example.my_first"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453525056736-blal83p2uqc7s6id29qmmfe5ap4dvjdv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMuJNaKl9TtpQeH7zQ_viZSaEKt5OZAOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453525056736-blal83p2uqc7s6id29qmmfe5ap4dvjdv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
