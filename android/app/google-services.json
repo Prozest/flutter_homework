@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "453525056736",
-    "project_id": "byerotten-bb949",
-    "storage_bucket": "byerotten-bb949.appspot.com"
+    "project_number": "491895027367",
+    "project_id": "homework-b8ec1",
+    "storage_bucket": "homework-b8ec1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:453525056736:android:4490a3c899d200accf3485",
+        "mobilesdk_app_id": "1:491895027367:android:abcbe58bbbbc24b238cd82",
         "android_client_info": {
-          "package_name": "com.example.my_first"
+          "package_name": "com.example.flutter_homework"
         }
       },
       "oauth_client": [
         {
-          "client_id": "453525056736-blal83p2uqc7s6id29qmmfe5ap4dvjdv.apps.googleusercontent.com",
+          "client_id": "491895027367-99hu0eo7u0ua80qn74vqi44vb0peebc7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMuJNaKl9TtpQeH7zQ_viZSaEKt5OZAOQ"
+          "current_key": "AIzaSyBn1UAU9ZC_CXtkBtknaK2Qqagz_AlMntY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "453525056736-blal83p2uqc7s6id29qmmfe5ap4dvjdv.apps.googleusercontent.com",
+              "client_id": "491895027367-99hu0eo7u0ua80qn74vqi44vb0peebc7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
