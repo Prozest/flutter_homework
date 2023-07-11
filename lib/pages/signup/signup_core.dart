@@ -4,6 +4,7 @@ import 'package:flutter_homework/component/loading.dart';
 import 'package:get/get.dart';
 
 import '../../app/app_routes.dart';
+import '../../component/snackbar.dart';
 
 class SignUpCore extends GetxController {
   final emailController = TextEditingController();
@@ -11,8 +12,14 @@ class SignUpCore extends GetxController {
 
   FirebaseAuth auth = FirebaseAuth.instance;
 
+  final formKey = GlobalKey<FormState>();
+
   Future signup() async{
     showLoadingCircle();
+
+    final isValid = formKey.currentState!.validate();
+    if(!isValid) return;
+
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text.trim(), 
@@ -21,12 +28,12 @@ class SignUpCore extends GetxController {
       checkLogged();
     } on FirebaseAuthException catch (e) {
       hideLoadingIndicator();
-      print(e);
+      SnackBarWidget.showSnackBar(e.message);
     }
   }
 
   checkLogged() async{
-    if(auth.currentUser == null){
+    if(auth.currentUser != null){
       Get.offAllNamed(Routes.home);
     }
   }

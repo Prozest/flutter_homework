@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_homework/component/snackbar.dart';
 import 'package:get/get.dart';
 
 import '../../app/app_routes.dart';
@@ -9,14 +10,22 @@ class LoginCore extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  final formKey = GlobalKey<FormState>();
+
   FirebaseAuth auth = FirebaseAuth.instance;
 
   Future login() async{
+    if(!formKey.currentState!.validate()) return;
+
     showLoadingIndicator();
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text.trim(), 
-      password: passwordController.text.trim()
-    );
+    try{
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(), 
+        password: passwordController.text.trim()
+      );
+    } on FirebaseAuthException catch (e){
+      SnackBarWidget.showSnackBar(e.message);
+    }
     hideLoadingIndicator();
     checkLogged();
   }
@@ -31,5 +40,9 @@ class LoginCore extends GetxController {
   void onInit() {
     checkLogged();
     super.onInit();
+  }
+
+  void goToSignUp(){
+    Get.offAllNamed(Routes.signup);
   }
 }
