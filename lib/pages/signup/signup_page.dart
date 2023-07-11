@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_homework/pages/login/login_core.dart';
-import 'package:flutter_homework/pages/signup/signup_page.dart';
+import 'package:flutter_homework/pages/login/login_page.dart';
+import 'package:flutter_homework/pages/signup/signup_core.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class LoginPage extends StatelessWidget {
- const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+ const SignUpPage({Key? key}) : super(key: key);
 
  @override
  Widget build(BuildContext context) {
-   var model = Get.put<LoginCore>(LoginCore());
+   var model = Get.put<SignUpCore>(SignUpCore());
 
    return Scaffold(
     body: Padding(
@@ -32,13 +32,13 @@ class LoginPage extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
-              onPressed: (){model.login();},
+              onPressed: (){model.signup();},
               icon: const Icon(Icons.lock_open, size: 30),
-              label: "Login".text.size(20).make(),
+              label: "SignUp".text.size(20).make(),
             ),
           ),
           const SizedBox(height: 24,),
-          TextButton(onPressed: (){Get.to(SignUpPage());}, child: "Sign Up".text.make())
+          TextButton(onPressed: (){Get.to(LoginPage());}, child: "Login".text.make())
         ],
       ),
     ),
