@@ -44,7 +44,14 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24,),
-            TextButton(onPressed: (){model.goToSignUp();}, child: "Sign Up".text.make())
+            TextButton(onPressed: (){model.goToForgotPassword();}, child: "Forgot Password?".text.make()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                "Dont have an account?".text.make(),
+                TextButton(onPressed: (){model.goToSignUp();}, child: "Sign Up".text.make())
+              ]
+            )
           ],
         ),
       ),

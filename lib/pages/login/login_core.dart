@@ -45,4 +45,8 @@ class LoginCore extends GetxController {
   void goToSignUp(){
     Get.offAllNamed(Routes.signup);
   }
+
+  void goToForgotPassword(){
+    Get.offAllNamed(Routes.forgotpassword);
+  }
 }
