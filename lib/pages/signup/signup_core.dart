@@ -10,6 +10,8 @@ class SignUpCore extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  bool isEmailVerified = false;
+
   FirebaseAuth auth = FirebaseAuth.instance;
 
   final formKey = GlobalKey<FormState>();
@@ -32,9 +34,18 @@ class SignUpCore extends GetxController {
     }
   }
 
+  checkVerified(){
+    isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
+  }
+
   checkLogged() async{
     if(auth.currentUser != null){
-      Get.offAllNamed(Routes.home);
+      checkVerified();
+      if(isEmailVerified){
+        Get.offAllNamed(Routes.home);
+      } else {
+        Get.offAllNamed(Routes.emailverification);
+      }
     }
   }
 

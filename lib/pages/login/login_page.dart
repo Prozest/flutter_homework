@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
    var model = Get.put<LoginCore>(LoginCore());
 
    return Scaffold(
+    resizeToAvoidBottomInset: false,
     body: Padding(
       padding: const EdgeInsets.all(20),
       child: Form(
