@@ -59,7 +59,7 @@ Future<void> showLoadingIndicator({bool isModal = true, Color? modalColor}) asyn
     );
     await _showOverlay(
       child: isModal
-          ? Stack(
+          ? const Stack(
               children: <Widget>[
                 ModalBarrier(
                   color: Colors.black38,
@@ -81,7 +81,7 @@ Future<void> showLoadingCircle({bool isModal = true, Color? modalColor}) async {
     const child = Center(child: CircularProgressIndicator());
     await _showOverlay(
       child: isModal
-          ? Stack(
+          ? const Stack(
               children: <Widget>[
                 ModalBarrier(
                   color: Colors.black38,

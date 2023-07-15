@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Loading(
       child: GetMaterialApp(
+        initialRoute: "/",
         scaffoldMessengerKey: SnackBarWidget.messengerKey,
         title: 'Flutter Demo',
         theme: ThemeData(
