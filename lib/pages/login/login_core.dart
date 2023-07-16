@@ -12,8 +12,6 @@ class LoginCore extends GetxController {
 
   final formKey = GlobalKey<FormState>();
 
-  bool isEmailVerified = false;
-
   FirebaseAuth auth = FirebaseAuth.instance;
 
   Future login() async{
@@ -32,15 +30,10 @@ class LoginCore extends GetxController {
     checkLogged();
   }
 
-  checkVerified(){
-    isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
-  }
-
   checkLogged() async{
     await Future.delayed(Duration(milliseconds: 300));
     if(auth.currentUser != null){
-      checkVerified();
-      if(isEmailVerified){
+      if(FirebaseAuth.instance.currentUser!.emailVerified){
         Get.offAllNamed(Routes.home);
       } else {
         Get.offAllNamed(Routes.emailverification);
@@ -50,6 +43,7 @@ class LoginCore extends GetxController {
 
   @override
   void onInit() {
+    
     checkLogged();
     super.onInit();
   }

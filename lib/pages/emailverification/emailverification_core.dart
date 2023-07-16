@@ -15,15 +15,18 @@ class EmailVerificationCore extends GetxController {
       await user.sendEmailVerification();
 
       timer = Timer.periodic(
-        const Duration(seconds: 3), 
-        (timer) {checkEmailVerified();});
+        Duration(seconds: 3), 
+        (_) {checkEmailVerified();});
     } catch (e){
       SnackBarWidget.showSnackBar(e.toString());
     }
   }
 
   Future checkEmailVerified() async {
+    await FirebaseAuth.instance.currentUser!.reload();
+
     if(FirebaseAuth.instance.currentUser!.emailVerified){
+      timer?.cancel();
       Get.offAllNamed(Routes.home);
     }
   }

@@ -39,6 +39,8 @@ class SignUpCore extends GetxController {
   }
 
   checkLogged() async{
+    await Future.delayed(Duration(milliseconds: 300));
+    
     if(auth.currentUser != null){
       checkVerified();
       if(isEmailVerified){
