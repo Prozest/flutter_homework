@@ -18,8 +18,10 @@ class EmailVerificationPage extends StatelessWidget {
         Center(
           child: "Verification Request Sent".text.size(20).make(),
         ),
-        SizedBox(height: 10,),
-        ElevatedButton(onPressed: (){model.sendVerificationRequest();}, child: "Send Another Request".text.size(16).make())
+        const SizedBox(height: 10,),
+        ElevatedButton(onPressed: (){model.sendVerificationRequest();}, child: "Send Another Request".text.size(16).make()),
+        const SizedBox(height: 10,),
+        TextButton(onPressed: (){model.logout();}, child: "Cancel".text.size(14).make())
       ],
     ),
    );
